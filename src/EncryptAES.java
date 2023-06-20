@@ -1,9 +1,5 @@
 import javax.crypto.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
@@ -35,10 +31,7 @@ public class EncryptAES {
                 encryptFile(child, ci, sk);
             }
         } else {
-            // Handle the case where dir is not really a directory.
-            // Checking dir.isDirectory() above would not be sufficient
-            // to avoid race conditions with another process that deletes
-            // directories.
+            System.out.println("something went wrong");
         }
     }
 
