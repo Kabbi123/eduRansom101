@@ -31,6 +31,8 @@ public class DecryptDES {
             for (File currentFile : files) {
                 if (!currentFile.isDirectory() && !currentFile.getName().toLowerCase().endsWith(".exe")) {
                     String key = "R?\n??i??";
+
+                    // if text file has no .axx, it gets lost
                     encryptFile(currentFile.getAbsolutePath(), currentFile.getAbsolutePath().replace(".axx", ""), key);
                     currentFile.delete();
                     try {
